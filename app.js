@@ -39,6 +39,10 @@ fs.readdir('./', (err, files) => {
 })
 
 
+var readDir = fs.readdirSync(dirAvatar);
+console.log(readDir);
+
+
 const download = (uri, dir, filename) => { 
     request.head(uri, function(err, res, body){
         console.log(filename+ ' -> ' +uri)
