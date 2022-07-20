@@ -40,7 +40,7 @@ fs.readdir('./', (err, files) => {
 
 
 var fileNameArr = fs.readdirSync(dirAvatar);
-// console.log(fileNameArr);
+console.log(fileNameArr);
 
 
 const download = (uri, dir, filename) => { 
@@ -91,7 +91,8 @@ axios.get(url, {
 
                 // console.log("get avatar", res_avatar)
                 let filename = item.route + "." + fileExtension
-                if(fileNameArr.indexOf(filename) < 0) {
+                let checkName = item.route + ".png"
+                if(fileNameArr.indexOf(checkName) < 0) {
                   console.log('not contain',filename + '---->' +fileNameArr.indexOf(filename));
                   download(res_avatar,dirAvatar,filename)
                 }  
